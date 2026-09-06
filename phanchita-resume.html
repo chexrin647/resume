@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phanchita Aphisirilertchai — Digital Film</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#18150F;
+    --paper:#F4EFE3;
+    --gold:#C79A3D;
+    --rust:#8A3F2C;
+    --stone:#736A5B;
+    --line: rgba(24,21,15,0.16);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-weight:400;
+    line-height:1.6;
+  }
+
+  .filmstrip{
+    position:fixed;
+    top:0; left:0; bottom:0; width:34px;
+    z-index:11;
+    background:var(--ink);
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0px, transparent 12px,
+      var(--paper) 12px, var(--paper) 23px
+    );
+    background-position: 11.5px 14px;
+    background-size: 11px 100%;
+    background-repeat: repeat-y;
+  }
+
+  main{
+    max-width:920px;
+    margin:0 auto;
+    padding:0 40px 100px 56px;
+  }
+
+  header.hero{
+    padding:96px 0 56px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .eyebrow{
+    font-size:13px;
+    color:var(--stone);
+    margin:0 0 22px 0;
+    letter-spacing:0.02em;
+  }
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(42px, 7vw, 78px);
+    line-height:1.02;
+    margin:0 0 18px 0;
+    color:var(--ink);
+  }
+  .role-line{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:22px;
+    color:var(--rust);
+    margin:0;
+  }
+
+  .quick-contact{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 28px;
+    margin-top:36px;
+    font-size:14.5px;
+    color:var(--stone);
+  }
+  .quick-contact a{
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px solid var(--gold);
+    padding-bottom:1px;
+  }
+  .quick-contact a:hover{ color:var(--rust); border-color:var(--rust); }
+
+  section{
+    padding:56px 0;
+    border-bottom:1px solid var(--line);
+  }
+  section:last-of-type{ border-bottom:none; }
+
+  .section-label{
+    font-size:13px;
+    color:var(--gold);
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:500;
+    margin:0 0 20px 0;
+  }
+
+  .statement p{
+    font-family:'Fraunces', serif;
+    font-weight:400;
+    font-size:clamp(20px, 2.6vw, 27px);
+    line-height:1.5;
+    max-width:680px;
+    margin:0;
+    color:var(--ink);
+  }
+
+  .grid-two{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:48px;
+  }
+
+  h2.role-title{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:22px;
+    margin:0 0 6px 0;
+  }
+  .org{
+    font-size:15px;
+    color:var(--stone);
+    margin:0 0 4px 0;
+  }
+  .sub{
+    font-size:14px;
+    color:var(--stone);
+    margin:0;
+  }
+
+  .tag-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:8px;
+  }
+  .tag{
+    font-size:14px;
+    padding:8px 16px;
+    border:1px solid var(--line);
+    border-radius:999px;
+    color:var(--ink);
+    background:transparent;
+  }
+
+  footer{
+    padding:64px 0 40px 0;
+  }
+  footer .role-title{ margin-bottom:20px; }
+  .contact-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    font-size:16px;
+  }
+  .contact-list li{
+    display:flex;
+    gap:14px;
+    align-items:baseline;
+  }
+  .contact-list .k{
+    width:88px;
+    flex-shrink:0;
+    color:var(--stone);
+    font-size:13px;
+  }
+  .contact-list a{
+    color:var(--ink);
+    text-decoration:none;
+  }
+  .contact-list a:hover{ color:var(--rust); }
+
+  .end-mark{
+    margin-top:56px;
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    color:var(--stone);
+    font-size:14px;
+  }
+
+  @media (max-width:640px){
+    main{ padding:0 22px 80px 46px; }
+    header.hero{ padding:64px 0 40px 0; }
+    .grid-two{ grid-template-columns:1fr; gap:36px; }
+    .contact-list .k{ width:72px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+  }
+</style>
+</head>
+<body>
+<div class="filmstrip" aria-hidden="true"></div>
+
+<main>
+
+  <header class="hero">
+    <p class="eyebrow">Online Resume</p>
+    <h1>Phanchita<br>Aphisirilertchai</h1>
+    <p class="role-line">Digital Film Student — Bangkok, Thailand</p>
+    <div class="quick-contact">
+      <a href="tel:+66624419794">+66 62 441 9794</a>
+      <a href="mailto:panchiapsrlch@gmail.com">panchiapsrlch@gmail.com</a>
+      <span>Sukhumvit 105, Bang Na, Bangkok 10260</span>
+    </div>
+  </header>
+
+  <section class="statement">
+    <p class="section-label">Profile</p>
+    <p>Creative and enthusiastic film student interested in filmmaking and content production. Known for being approachable, adaptable, and easy to work with, with strong teamwork and communication skills and a willingness to learn in every project.</p>
+  </section>
+
+  <section>
+    <div class="grid-two">
+      <div>
+        <p class="section-label">Education</p>
+        <h2 class="role-title">B.A. Digital Film</h2>
+        <p class="org">School of Communication Arts</p>
+        <p class="sub">University of the Thai Chamber of Commerce</p>
+      </div>
+      <div>
+        <p class="section-label">Work Experience</p>
+        <h2 class="role-title">Internship</h2>
+        <p class="org">Production &amp; content work</p>
+        <p class="sub">Hands-on experience supporting film and content projects</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">Interests &amp; Hobbies</p>
+    <div class="tag-row">
+      <span class="tag">Reading books</span>
+      <span class="tag">Watching movies</span>
+      <span class="tag">Listening to music</span>
+      <span class="tag">Self-development</span>
+    </div>
+  </section>
+
+  <footer>
+    <p class="section-label">Contact</p>
+    <h2 class="role-title">Let's work together</h2>
+    <ul class="contact-list">
+      <li><span class="k">Phone</span><a href="tel:+66624419794">+66 62 441 9794</a></li>
+      <li><span class="k">Email</span><a href="mailto:panchiapsrlch@gmail.com">panchiapsrlch@gmail.com</a></li>
+      <li><span class="k">Location</span><span>Sukhumvit 105, Bang Na, Bangkok 10260</span></li>
+    </ul>
+    <p class="end-mark">Fin.</p>
+  </footer>
+
+</main>
+</body>
+</html>
